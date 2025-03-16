@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Button Choice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .choice-label {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <script>
+        function showChoices() {
+            let choices = document.querySelectorAll('input[name="menu"]:checked');
+            let selectedChoices = [];
+            choices.forEach((choice) => {
+                selectedChoices.push(choice.value);
+            });
+
+            if (selectedChoices.length > 0) {
+                alert("Anda memilih: " + selectedChoices.join(", "));
+            } else {
+                alert("Silakan pilih setidaknya satu opsi.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Pilih Menu</h2>
+    
+    <div class="checkbox-container">
+        <label class="choice-label"><input type="checkbox" name="menu" value="Home"> Home</label>
+        <label class="choice-label"><input type="checkbox" name="menu" value="About"> About</label>
+        <label class="choice-label"><input type="checkbox" name="menu" value="Services"> Services</label>
+        <label class="choice-label"><input type="checkbox" name="menu" value="Contact"> Contact</label>
+    </div>
+
+    <button class="submit-button" onclick="showChoices()">Submit</button>
+
+</body>
+</html>

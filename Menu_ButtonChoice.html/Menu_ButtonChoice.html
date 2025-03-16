@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Choice Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .choice-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .choice-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <script>
+        function handleChoice(choice) {
+            alert("Anda memilih: " + choice);
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Pilih Menu</h2>
+    
+    <div class="button-container">
+        <button class="choice-button" onclick="handleChoice('Home')">Home</button>
+        <button class="choice-button" onclick="handleChoice('About')">About</button>
+        <button class="choice-button" onclick="handleChoice('Services')">Services</button>
+        <button class="choice-button" onclick="handleChoice('Contact')">Contact</button>
+    </div>
+
+</body>
+</html>

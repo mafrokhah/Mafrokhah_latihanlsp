@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Radio Button</title>
+</head>
+<body>
+
+    <h3>Pilih Menu:</h3>
+    
+    <input type="radio" id="home" name="menu" value="home">
+    <label for="home">Home</label><br>
+
+    <input type="radio" id="about" name="menu" value="about">
+    <label for="about">Tentang Kami</label><br>
+
+    <input type="radio" id="services" name="menu" value="services">
+    <label for="services">Layanan</label><br>
+
+    <input type="radio" id="contact" name="menu" value="contact">
+    <label for="contact">Kontak</label><br>
+
+    <button onclick="goToPage()">Pilih</button>
+
+    <script>
+        function goToPage() {
+            let selectedValue = document.querySelector('input[name="menu"]:checked');
+            if (selectedValue) {
+                window.location.href = selectedValue.value + ".html";
+            } else {
+                alert("Silakan pilih menu terlebih dahulu!");
+            }
+        }
+    </script>
+
+</body>
+</html>
